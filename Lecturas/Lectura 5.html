@@ -5,7 +5,7 @@
     <meta charset="UTF-B">
     <meta content="Pagina web OVI para aprender Diseño de sitios web" name="description" />
     <meta content="WEB, PAGINA, DISEÑO" name="keywords" />
-    <title> Diseno De Sitios Web</title>
+    <title> Sentencias en SQL </title>
     
     </style>
 </head>
@@ -21,42 +21,83 @@
 
     </center>
                 <left> 
-                    <h2> Primera Lectura </h2>
+                    <center><h2> Sentencias o Sripts </h2></center>
                 </left>
                 
                      <justify>
                         <article> 
                     
-                          Las bases de datos son herramientas muy útiles que nos ayudan a entender y agrupar mejor ciertos datos que tenemos, para este caso una base de datos relacional es una recopilación de elementos de datos con relaciones predefinidas entre ellos. Estas están estructuradas de acuerdo con cómo se desee enlazar la información, es decir por sus atributos o datos que contienen cada tabla de una base de datos.
+                          Un sistema de base de datos suele contener varias bases de datos. <br>
 
-                          Este modelo de organización y gestión de bases de datos consistente generalmente en el almacenamiento de datos en tablas compuestas por filas, o tuplas, y columnas o campos. Se distingue de otros modelos, como el jerárquico, ya que llega a ser mucho más comprensible para el usuario inexperto. 
+                          Cada base de datos suele contener varias tablas.<br>
+
+                          Las tablas almacenan los datos organizados por filas.<br>
+
+                          Cada fila contiene varios campos.<br>
+
+                          Cada campo tiene una serie de propiedades, como por ejemplo, el nombre del campo, su longitud, tipo de dato que se va a almacenar, etc.
+                          <br>
+
+                          <article>
+                            <p>
+                                <strong>
+                                Las sentencias SQL no son sensibles a mayúsculas y minúsculas, es decir, 'SELECT' y 'select' son dos palabras iguales para SQL.
+                                </strong>
+                            </p>
+                          </article>
+
+                          <article>
+                            <p>
+                                <strong>
+                                Algunos sistemas de bases de datos necesitan un punto y coma después de cada sentencia SQL para ejecutarse correctamente:
+                                </strong> <br> CREATE DATATABASE mibasedeatos;
+                            </p>
+                          </article>
+                            <p>
+                                <strong>
+                                Este punto y coma también puede servir para separar una sentencia SQL de otra sentencia SQL en la misma línea:
+                                </strong> <br> CREATE DATATABASE mibasedeatos; CREATE TABLE mitabla1;
+                            </p>
                             <center>
-                                <img src="https://modelodered.files.wordpress.com/2017/10/imagen6.jpg?w=600">
+                                <img src="https://i.ytimg.com/vi/ZngN26gWWSA/maxresdefault.jpg">
                             </center>
-                            
-                            Entre los conceptos que rodean este término están por ejemplo:
-                            <article> 
-                            Tabla: es el nombre que recibe cada una de las relaciones que se establecen entre los datos almacenados, dentro de estas tablas los datos están agrupados en columnas y filas.
-                              
-                            </article>
-                            <article>
-                              Claves: elementos que impiden la duplicidad de datos.
-                            </article>
-                            <h3>Existen dos grandes tipos de claves: las claves primarias y las secundarias o externas.</h3>
-                            </article>
-                            
-                            <article>
-                              Claves primarias: Es el tipo de relación que se ha definido en la tabla. Pueden añadirse otros atributos específicos y propios. 
+                            <h1>Las sentencias SQL se pueden agrupar por funcionalidades:</h1>
+                            <div>
+                                1.- Lenguaje de definición de datos (DDL). <br>
 
-                            </article>
+                                 DDL está compuesto por sentencias para la creación (CREATE), modificación (ALTER) y borrado (DROP) de los componentes principales de una base de datos:
+                                 <ol>
+                                    <li>base de datos (DATABASE)</li>
+                                    <li>tablas (TABLE)</li>
+                                    <li>vistas (VIEW)</li>
+                                    <li>índices (INDEX)</li>
+                                    <li>procedimientos almacenados (PROCEDURE)</li>
+                                    <li>disparadores (TRIGGER).</li>
+                                 </ol>
 
-                            <article>
-                              Claves externas o secundarias: Se definen para cada una de las claves primarias establecidas para los elementos o entidades de una relación.
-                            </article>
-          
-                           
-                            
-                            
+                                 2.- Lenguaje de manipulación de datos (DML). <br>
+
+                                 DML está compuesto por sentencias que sirven para :
+                                 <ol>
+                                    <li>consultar (SELECT)</li>
+                                    <li>insertar (INSERT)</li>
+                                    <li>modificar (UPDATE)</li>
+                                    <li>borrar (DELETE)</li>                  
+                                 </ol>
+
+                                 3.- Lenguaje de control de datos (DCL). <br>
+
+                                 DCL está compuesto por sentencias SQL para controlar las funciones de administración :
+                                 <ol>
+                                    <li>Confirmar la operacion (COMMIT)</li>
+                                    <li>Retroceder la operacion (ROLLBACK)</li>
+                                    <li>Dar permisos (GRANT)</li>
+                                    <li>Quitar permisos (REVOKE)</li>                  
+                                 </ol>
+
+                            </div>      
+
+                                                       
                         </article>
 
                     </justify>
