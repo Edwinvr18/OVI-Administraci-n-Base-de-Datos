@@ -69,9 +69,11 @@ function comprobar(){
 	var respuesta = $("input[type=radio]:checked").val();
 
 	if(respuesta ==indice_respuesta_correcta){
-		alert("Muy Bien!");
+		var msg1 = "Muy Bien!";
+		alert(msg1);
 	}else{
-		alert("Incorrecto");
+		var msg2 = "Incorrecto";
+		alert(msg2);
 	}
 	jugar();
 }
