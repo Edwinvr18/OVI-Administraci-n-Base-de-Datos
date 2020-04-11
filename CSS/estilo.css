@@ -17,7 +17,13 @@ article{
     background-color: rgb(240, 180, 41);
 }
 header{
-
+/*headerHeight*/
+height:400px;min-height:400px;
+/*headerBGURL*/
+background-image:url('../Imagenes/ECBTI-1.png');
+/*headerBGPosition*/
+background-position:0 0;border:1px solid /*headerBorderColor*/
+#005fbf;
 }
 .principal{
     display: inline-block;
