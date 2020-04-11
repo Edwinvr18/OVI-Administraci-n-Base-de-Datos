@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Actividad 1</title>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+	<div id="pregunta"></div>
+	<div id="respuestas"></div>
+
+<input type="button" value="Enviar" onclick="comprobar()">
+	<script>
+		var preguntas = [
+		"¿Un informe en una base de datos es..?",
+		"De las siguientes afirmaciones, indica cuales son ciertas respecto a una base de datos relacional",
+		"Un archivo o conjunto de archivos que contienen múltiples informaciones que, de alguna forma, guardan relación es:",
+		"La herramienta informatica que permite crear, manipular, gestionar y eliminar los datos y las estructuras de una base de datos es:"
+
+		];
+		var respuestas = [
+		["Una presentación de los datos en la vista de impresión",	"Una pantalla de inicio",	"Un informe de actividades",	"Una lista de errores"],
+
+		["Ambas son falsas",	"Ambas son ciertas",	"Los datos se representan en tablas",	"La respuesta a las consultas se configura en forma tabla"],
+
+		["Una base de datos",	"Un sistema gestor de Base de Datos (SGBD)",
+		"Ninguna es correcta",	"Una aplicación informática para el manejo de base de datos"],
+
+		["Un sistema gestor de Base de Datos (SGBD)",	"Una base de datos jerárquica",	"Una base de datos relacional",	"Ninguna es correcta"],
+
+		];
+
+jugar();
+
+		var indice_respuesta_correcta;
+
+function jugar(){
+			var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+
+		var respuestas_posibles = respuestas[indice_aleatorio];
+
+		var posiciones = [0,1,2,3];
+		var respuestas_reordenadas = [];
+
+		var in_respuesta = false;
+
+		for(i in respuestas_posibles){
+			var posicion_aleatoria = Math.floor(Math.random()*posiciones.length);
+			if(posicion_aleatoria==0 && in_respuesta == false){
+				indice_respuesta_correcta =i;
+				in_respuesta = true;
+			}
+            respuestas_reordenadas[i] = respuestas_posibles[posiciones[posicion_aleatoria]];
+			posiciones.splice(posicion_aleatoria, 1)
+		}
+
+		var txt_respuesta="";
+		for(i in respuestas_reordenadas){
+			txt_respuesta += '<input type="radio" name="pp" value="'+i+'"><label>'+respuestas_reordenadas[i]+'</label<br><br><br>';
+		}
+
+		document.getElementById("respuestas").innerHTML = txt_respuesta;
+		document.getElementById("pregunta").innerHTML = preguntas[indice_aleatorio];
+
+}
+function comprobar(){
+	var respuesta = $("input[type=radio]:checked").val();
+
+	if(respuesta ==indice_respuesta_correcta){
+		alert("Muy Bien!");
+	}else{
+		alert("Incorrecto");
+	}
+	jugar();
+}
+
+	</script>
+</body>
+</html>

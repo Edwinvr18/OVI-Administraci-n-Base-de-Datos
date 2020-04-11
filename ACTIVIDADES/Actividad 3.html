@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Actividad 3</title>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+	<div id="pregunta"></div>
+	<div id="respuestas"></div>
+
+<input type="button" value="Enviar" onclick="comprobar()">
+	<script>
+		var preguntas = [
+		"¿Qué es redundancia en Bases de Datos?",
+		"¿El lenguaje SQL permite...",
+		"Para qué sirven los graficos y tablas",
+		"¿Cuál es el objetivo de una tabla normalizadora de datos"
+
+		];
+		var respuestas = [
+		["Repitición de datos innecesarios en los archivos que conforman la Base de Datos",	"Una pantalla de inicio",	"Un informe de actividades",	"Una lista de errores"],
+
+		["Realizar consultas a nuestras Bases de Datos, insertar, actualizar y borrar datos",	"Todas son ciertas",	"Que los datos se representan en tablas",	"Que la respuesta a las consultas se configuren en forma tabla"],
+
+		["Resumir en un dibujo toda una serie de datos",	"Guardar y almacenar información",
+		"Ninguna es correcta",	"Visualizar el manejo de base de datos"],
+
+		["Minimizar el número de celdas vacias",	"Aumentar el número de celdas vacias",	"Borrar el número de celdas vacias",	"Ninguna es correcta"],
+
+		];
+
+jugar();
+
+		var indice_respuesta_correcta;
+
+function jugar(){
+			var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+
+		var respuestas_posibles = respuestas[indice_aleatorio];
+
+		var posiciones = [0,1,2,3];
+		var respuestas_reordenadas = [];
+
+		var in_respuesta = false;
+
+		for(i in respuestas_posibles){
+			var posicion_aleatoria = Math.floor(Math.random()*posiciones.length);
+			if(posicion_aleatoria==0 && in_respuesta == false){
+				indice_respuesta_correcta =i;
+				in_respuesta = true;
+			}
+            respuestas_reordenadas[i] = respuestas_posibles[posiciones[posicion_aleatoria]];
+			posiciones.splice(posicion_aleatoria, 1)
+		}
+
+		var txt_respuesta="";
+		for(i in respuestas_reordenadas){
+			txt_respuesta += '<input type="radio" name="pp" value="'+i+'"><label>'+respuestas_reordenadas[i]+'</label<br><br><br>';
+		}
+
+		document.getElementById("respuestas").innerHTML = txt_respuesta;
+		document.getElementById("pregunta").innerHTML = preguntas[indice_aleatorio];
+
+}
+function comprobar(){
+	var respuesta = $("input[type=radio]:checked").val();
+
+	if(respuesta ==indice_respuesta_correcta){
+		alert("Muy Bien!");
+	}else{
+		alert("Incorrecto");
+	}
+	jugar();
+}
+
+	</script>
+</body>
+</html>
